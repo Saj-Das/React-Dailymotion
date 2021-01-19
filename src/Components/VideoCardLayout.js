@@ -2,7 +2,7 @@ import React from 'react'
 
 function VideoCardLayout()
 {
-  return (<div>Cat</div>);
+  return (<div>VideoCardLayout</div>);
 }
 
 export default VideoCardLayout
