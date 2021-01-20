@@ -10,14 +10,14 @@ class VideoCardLayout extends React.Component {
 
   render() {
     const videos = this.state.videoList.map(item => (
-      <div key={item.id}>
+      <div class="col-md-3" key={item.id}>
         {item.description}
-      <hr/>
+
       </div>
       
     ));
 
-    return videos;
+    return <div class="row">{videos}</div>;
   }
 
   componentDidMount() {
