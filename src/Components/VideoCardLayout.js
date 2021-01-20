@@ -10,7 +10,7 @@ class VideoCardLayout extends React.Component {
 
   render() {
     const videos = this.state.videoList.map(item => (
-      <div class="card" style={{width: 18+"rem",padding:10+"px"}}>
+      <div class="card" style={{ width: 18 + "rem", padding: 10 + "px" }}>
         <img
           class="card-img-top"
           src={item.thumbnail_url}
