@@ -5,10 +5,10 @@ import SearchBar from "./Components/SearchBar.js";
 export default function App() {
   return (
     <div class="row" style={{padding: 20+"px"}}>
-      <div class="col-md-3">
+      <div class="col-md-2">
          <SearchBar />
       </div>
-      <div class="col-md-9">
+      <div class="col-md-10">
       <VideoCardLayout />
       </div>
     </div>
