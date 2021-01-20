@@ -5,7 +5,7 @@ class VideoCardLayout extends React.Component{
   constructor() {
         super()
         this.state = {
-            character: {}
+            videoList: [{}]
         }
     }
 
@@ -18,8 +18,9 @@ class VideoCardLayout extends React.Component{
         fetch("https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration")
             .then(response => response.json())
             .then(data => {
+              console.log(data.list);
                 this.setState({
-                    character: data
+                    videoList: data
                 })
             })
     }
