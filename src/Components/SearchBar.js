@@ -15,10 +15,20 @@ class SearchBar extends React.Component{
   }
     render()
     {
-      return (<div>  
-      <input type="text" value={this.state.searchText}  onChange={ this.handleChange }  name="searchText" id="searchText"></input>
-      <button onClick={(e) => this.search()}>Search</button> 
-      </div>)
+      return (
+        
+        <div class="input-group mb-3">
+  <input type="text" class="form-control" 
+  value={this.state.searchText}  onChange={ this.handleChange }  name="searchText" id="searchText"
+  aria-label="search" aria-describedby="basic-addon2" />
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" onClick={(e) => this.search()}
+    type="button">Search</button>
+  </div>
+</div>
+      )  
+        
+        
     }
 
     search()
