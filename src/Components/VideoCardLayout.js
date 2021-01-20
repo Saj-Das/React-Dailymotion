@@ -9,8 +9,6 @@ class VideoCardLayout extends React.Component {
   }
 
   render() {
-    console.log("render");
-    console.log(this.state.videoList);
     const videos = this.state.videoList.map(item => (
       <div key={item.id}>
         {item.description}
@@ -28,7 +26,6 @@ class VideoCardLayout extends React.Component {
     )
       .then(response => response.json())
       .then(data => {
-        console.log("comp");
         this.setState({
           videoList: data.list
         });
