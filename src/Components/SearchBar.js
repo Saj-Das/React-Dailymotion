@@ -8,7 +8,10 @@ class SearchBar extends React.Component{
 
     render()
     {
-      return (<div>  <input type="text" name="searchText" id="searchText"></input><button onClick="search(searchText)">Search</button> </div>)
+      return (<div>  
+      <input type="text" name="searchText" id="searchText"></input>
+      <button onClick={(e) => this.search({searchText})}>Search</button> 
+      </div>)
     }
 
     search(searchText)
