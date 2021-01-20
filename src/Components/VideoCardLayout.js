@@ -12,9 +12,9 @@ class VideoCardLayout extends React.Component {
     const videos = this.state.videoList.map(item => (
       <div class="col-md-3" key={item.id}>
         <img src={item.thumbnail_url} style={{ width: 180 + "px" }} />
-        <h7>{item.title}</h7>
-        <h7>{item.views_total}</h7>
-        <h7>{item.duration}</h7>
+       <br/> <h7>{item.title}</h7>
+       <br/> <h7>{item.views_total}</h7>
+       <br/> <h7>{item.duration}</h7>
       </div>
     ));
 
