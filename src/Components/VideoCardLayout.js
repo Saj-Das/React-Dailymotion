@@ -1,8 +1,28 @@
 import React from 'react'
 
-function VideoCardLayout()
-{
-  return (<div>VideoCardLayout</div>);
-}
+class VideoCardLayout extends React.Component{
 
-export default VideoCardLayout
+  constructor() {
+        super()
+        this.state = {
+            character: {}
+        }
+    }
+
+    render()
+    {
+      return <div>VideoCard</div>
+    }
+
+    componentDidMount() {
+        fetch("https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration")
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    character: data
+                })
+            })
+    }
+  }
+
+  export default VideoCardLayout;
