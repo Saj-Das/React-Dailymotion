@@ -3,13 +3,10 @@ import React from "react";
 class VideoCardLayout extends React.Component {
   constructor() {
     super();
-    this.state = {
-      videoList: [{}]
-    };
   }
 
   render() {
-    const videos = this.state.videoList.map(item => (
+    const videos = this.props.videoList.map(item => (
       <div class="card" style={{ width: 18 + "rem", padding: 10 + "px" }}>
         <img
           class="card-img-top"
