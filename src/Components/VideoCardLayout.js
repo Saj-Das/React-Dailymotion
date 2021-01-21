@@ -31,24 +31,6 @@ class VideoCardLayout extends React.Component {
     return <div class="row">{videos}</div>;
   }
 
-  componentDidMount() {
-    let url;
-    if (this.props.searchText == null) {
-      url =
-        "https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration";
-    } else {
-      url =
-        "https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration,search="+this.props.searchText;
-    }
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          videoList: data.list
-        });
-      });
-  }
 }
 
 export default VideoCardLayout;
