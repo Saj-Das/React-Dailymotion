@@ -4,6 +4,10 @@ import VideoCardLayout from "./Components/VideoCardLayout.js";
 import SearchBar from "./Components/SearchBar.js";
 
 class App extends React.Component {
+   constructor() {
+    super();
+    this.state = { searchText: null };
+  }
   render() {
     return (
       <div class="row" style={{ padding: 20 + "px" }}>
@@ -11,10 +15,17 @@ class App extends React.Component {
           <SearchBar updateFilter={this.handleFilterUpdate} />
         </div>
         <div class="col-md-10">
-          <VideoCardLayout />
+          <VideoCardLayout searchText={this.state.searchText}/>
         </div>
       </div>
     );
   }
+
+   handleFilterUpdate(filterValue) {
+    this.setState({
+      searchText: filterValue
+    });
+  }
+
 }
 export default App;
