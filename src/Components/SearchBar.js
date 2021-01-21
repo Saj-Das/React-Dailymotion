@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
   }
 
   search() {
-    console.log("searchText", this.state.searchText);
+    this.props.updateFilter(this.state.searchText);
   }
 }
 
