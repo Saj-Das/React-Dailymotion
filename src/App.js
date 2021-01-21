@@ -7,6 +7,7 @@ class App extends React.Component {
    constructor() {
     super();
     this.state = { searchText: null };
+    this.handleFilterUpdate = this.handleFilterUpdate.bind(this);
   }
   render() {
     return (
