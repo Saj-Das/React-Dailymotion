@@ -37,6 +37,8 @@ class VideoCardLayout extends React.Component {
       url =
         "https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration";
     } else {
+      url =
+        "https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration,search="+this.props.searchText;
     }
 
     fetch(url)
