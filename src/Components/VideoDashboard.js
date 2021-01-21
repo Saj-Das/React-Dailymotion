@@ -1,0 +1,49 @@
+import React from "react";
+import VideoCardLayout from "./VideoCardLayout.js";
+import SearchBar from "./SearchBar.js";
+
+class VideoDashboard extends React.Component {
+  constructor() {
+    super();
+    this.state = { searchText: null, videoList: null };
+    this.handleFilterUpdate = this.handleFilterUpdate.bind(this);
+  }
+  componentDidMount() {
+    
+        console.log('VideoDashboard');
+    let url;
+    if (this.state.searchText == null) {
+      url =
+        "https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration";
+    } else {
+      url =
+        "https://api.dailymotion.com/videos?fields=thumbnail_url,description,id,title,views_total,duration,search=" +
+        this.state.searchText;
+    }
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        this.state.videoList = data;
+      });
+  }
+  render() {
+    return (
+      <div class="row" style={{ padding: 20 + "px" }}>
+        <div class="col-md-2">
+          <SearchBar updateFilter={this.handleFilterUpdate} />
+        </div>
+        <div class="col-md-10">
+          <VideoCardLayout videoList={this.state.videoList} />
+        </div>
+      </div>
+    );
+  }
+
+  handleFilterUpdate(filterValue) {
+    this.setState({
+      searchText: filterValue
+    });
+  }
+}
+export default VideoDashboard;
