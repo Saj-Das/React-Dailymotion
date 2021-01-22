@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar.js";
 class VideoDashboard extends React.Component {
   constructor() {
     super();
-    this.state = { searchText: null, videoList: null };
+    this.state = { searchText: null };
     this.handleFilterUpdate = this.handleFilterUpdate.bind(this);
   }
   
