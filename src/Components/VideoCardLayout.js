@@ -55,7 +55,6 @@ class VideoCardLayout extends React.Component {
 
     return <div class="row">{videos}</div>;
 
-    //return <div class="row">videos</div>;
   }
 }
 
