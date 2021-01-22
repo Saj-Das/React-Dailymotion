@@ -31,7 +31,6 @@ class VideoCardLayout extends React.Component {
   }
   componentDidUpdate(prevProps) {
     if (this.props.searchText !== prevProps.searchText) {
-      console.log('this.props.searchText',this.props.searchText)
       this.load();
     }
   }
