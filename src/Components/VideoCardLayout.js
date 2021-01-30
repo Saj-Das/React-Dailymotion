@@ -37,7 +37,6 @@ class VideoCardLayout extends React.Component {
     }
   }
   nextPath(path) {
-    console.log("dasd", this.props.history);
     this.props.history.push(path);
   }
 
