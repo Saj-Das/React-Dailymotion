@@ -11,7 +11,7 @@ class App extends React.Component {
         <div>
           <Switch>
             <Route exact path="/" component={VideoDashboard} />
-            <Route exact path="/preview" component={VideoPreview} />
+            <Route exact path="/preview/:id" component={VideoPreview} />
           </Switch>
         </div>
       </Router>
