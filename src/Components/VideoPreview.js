@@ -2,6 +2,10 @@ import React from "react";
 import ReactDom from "react-dom";
 
 class VideoPreview extends React.Component {
+  constructor() {
+    super();
+    this.state = { videoInfo: { url: "", title: "" } };
+  }
   render() {
     return (
       <div>
@@ -11,10 +15,7 @@ class VideoPreview extends React.Component {
       </div>
     );
   }
-  constructor() {
-    super();
-    this.state = { videoInfo: {} };
-  }
+
   componentDidMount() {
     const id = this.props.match.params.id;
 
