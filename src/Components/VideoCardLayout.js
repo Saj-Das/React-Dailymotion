@@ -9,7 +9,6 @@ class VideoCardLayout extends React.Component {
     };
   }
   load() {
-    console.log("VideoDashboard");
     let url;
     if (this.props.searchText == null) {
       url =
@@ -66,9 +65,7 @@ class VideoCardLayout extends React.Component {
 
     return (
       <div class="row">
-        {" "}
-        <Link to="/preview">Home </Link>
-        {videos}
+       {videos}
       </div>
     );
   }
