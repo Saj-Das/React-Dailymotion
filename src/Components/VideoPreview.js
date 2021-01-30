@@ -4,14 +4,13 @@ import ReactDom from "react-dom";
 class VideoPreview extends React.Component {
   constructor() {
     super();
-    this.state = { videoInfo: { url: "", title: "" } };
+    this.state = { url: "", title: "" };
   }
   render() {
     return (
       <div>
-        Preview
-        <img src={this.state.videoInfo.url} />
-        {this.state.videoInfo.title}
+        <img src={this.state.url} />
+        {this.state.title}
       </div>
     );
   }
@@ -22,12 +21,13 @@ class VideoPreview extends React.Component {
     this.load(id);
   }
   load(id) {
-    var url = "https://api.dailymotion.com/video/" + id + "?fields=url,title";
+    var url = "https://api.dailymotion.com/video/" + id + "?fields=title";
     fetch(url)
       .then(response => response.json())
       .then(data => {
         this.setState({
-          videoInfo: data.list
+          url: data.url,
+          title: data.title
         });
       });
   }
