@@ -1,5 +1,5 @@
 import React from "react";
-import { Link,withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class VideoCardLayout extends React.Component {
   constructor() {
@@ -43,10 +43,9 @@ class VideoCardLayout extends React.Component {
 
   render() {
     const videos = this.state.videoList.map(item => (
-      
       <div
         class="card"
-        onClick={() => this.nextPath("/preview")}
+        onClick={() => this.nextPath("/preview/" + item.id)}
         style={{ width: 18 + "rem", padding: 10 + "px" }}
       >
         <img
@@ -66,7 +65,13 @@ class VideoCardLayout extends React.Component {
       </div>
     ));
 
-    return <div class="row"> <Link to="/preview">Home </Link>{videos}</div>;
+    return (
+      <div class="row">
+        {" "}
+        <Link to="/preview">Home </Link>
+        {videos}
+      </div>
+    );
   }
 }
 
